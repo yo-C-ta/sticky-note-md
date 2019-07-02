@@ -33,6 +33,13 @@ fs.readFile(settingfile, (err, data) => {
     try {
         fs.statSync(filepath);
         readMdFile(filepath);
+        fs.watch(filepath, (event, fname) => {
+            if (event == 'rename') {
+                filepath = fname;
+            } else {
+                readMdFile(filepath);
+            }
+        });
     } catch (err) {}
 });
 
@@ -54,6 +61,13 @@ function openFile() {
 
             filepath = fileNames[0];
             readMdFile(filepath);
+            fs.watch(filepath, (event, fname) => {
+                if (event == 'rename') {
+                    filepath = fname;
+                } else {
+                    readMdFile(filepath);
+                }
+            });
         }
     );
 }
