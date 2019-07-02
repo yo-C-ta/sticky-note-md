@@ -95,7 +95,8 @@ function editFile() {
     if (!filepath || !markdown) return;
 
     const exec = require('child_process').exec;
-    exec(filepath, (err, stdout, stderr) => {
+    const cmd = process.platform != 'win32' ? 'open ' : '';
+    exec(cmd + filepath, (err, stdout, stderr) => {
         if (err) {
             alert('editor execute err.');
         }
