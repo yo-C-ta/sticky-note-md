@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>StickyNoteMD</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.8/styles/darcula.min.css">
+
+    <style>
+        pre,
+        code {
+            font-family: "consolas";
+            color: #f8f8f2;
+            background-color: #282a36;
+        }
+
+        pre {
+            border-radius: 5px 5px 5px 5px;
+            overflow: auto;
+        }
+
+        pre>code {
+            display: block;
+            padding: 0.5rem;
+            word-wrap: normal;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="openFile">Open</button>
+    <button id="saveFile">Save</button>
+    <button id="editFile">Edit</button>
+    <button id="closeWin">Close</button>
+    <br>
+
+    <div id="content"></div>
+
+    <script type="text/javascript" src="index.js"></script>
+</body>
+
+</html>
